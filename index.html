@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+<head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+ <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+ <script src="Leaflet.LimitZoom.js"></script>
+ <script src="Leaflet.ContinuousZoom.js"></script>
+<style>
+img { 
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: pixelated; 
+    image-rendering: optimize-contrast; 
+    -ms-interpolation-mode: nearest-neighbor;
+}
+</style>
+</head>
+<body id="map" style="height: 100%; width: 100%;">
+   <script>
+var map = L.map('map', {
+  maxZoom: 12,
+  minZoom: 0,
+  crs: L.CRS.Simple,
+  zoomSnap: 0,
+  zoomDelta: 0.25
+}).setView([1, 1], 1);
+
+var southWest = map.unproject([0, 65536], 8);
+var northEast = map.unproject([65536, 0], 8);
+map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+L.tileLayer('/tiles/{z}/{y}/{x}.png', {
+  attribution: 'data: censys, image: own',
+  nativeZooms: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}).addTo(map);
+   </script>
+</body>
+
