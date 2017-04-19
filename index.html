@@ -19,21 +19,21 @@ img {
 </head>
 <body id="map" style="height: 100%; width: 100%;">
    <script>
-var map = L.map('map', {
-  maxZoom: 12,
-  minZoom: 0,
-  crs: L.CRS.Simple,
-  zoomSnap: 0,
-  zoomDelta: 0.25
-}).setView([1, 1], 1);
-
-var southWest = map.unproject([0, 65536], 8);
-var northEast = map.unproject([65536, 0], 8);
-map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
-L.tileLayer('/tiles/{z}/{y}/{x}.png', {
-  attribution: 'data: censys, image: own',
-  nativeZooms: [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}).addTo(map);
+     var map = L.map('map', {
+       maxZoom: 12,
+       minZoom: 0,
+       crs: L.CRS.Simple,
+       zoomSnap: 0,
+       zoomDelta: 0.25
+     }).setView([1, 1], 1);
+     
+     var southWest = map.unproject([0, 65536], 8);
+     var northEast = map.unproject([65536, 0], 8);
+     map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+     L.tileLayer('/tiles/{z}/{y}/{x}.png', {
+       attribution: 'data: censys, image: own',
+       nativeZooms: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+     }).addTo(map);
    </script>
 </body>
 
