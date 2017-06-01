@@ -1,0 +1,6 @@
+[submodule "tiles_color"]
+	path = tiles_color
+	url = git@github.com:ipv4map/tiles_color.git
+[submodule "tiles_bw"]
+	path = tiles_bw
+	url = git@github.com:ipv4map/tiles_bw.git

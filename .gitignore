@@ -1,6 +1,10 @@
 /*
 !.gitignore
-!tiles
+!.gitmodules
+!tiles_color
+!tiles_bw
 !index.html
+!bw.html
+!color.html
 !Leaflet.ContinuousZoom.js
 !Leaflet.LimitZoom.js
